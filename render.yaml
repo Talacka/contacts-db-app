@@ -1,9 +1,6 @@
 databases:
   - name: contacts-db
-    databaseName: contacts_db
-    user: postgres
     plan: free
-
 services:
   - type: web
     name: contacts-api-service
