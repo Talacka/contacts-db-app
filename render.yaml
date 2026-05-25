@@ -1,3 +1,9 @@
+databases:
+  - name: contacts-db
+    databaseName: contacts_db
+    user: postgres
+    plan: free
+
 services:
   - type: web
     name: contacts-api-service
@@ -9,6 +15,3 @@ services:
         fromDatabase:
           name: contacts-db
           property: connectionString
-  - type: db
-    name: contacts-db
-    ipAllowList: [] # Limit database access to Render services for security
