@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: contacts-api-service
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm run seed && npm start
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: contacts-db
+          property: connectionString
+  - type: db
+    name: contacts-db
+    ipAllowList: [] # Limit database access to Render services for security
